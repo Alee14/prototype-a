@@ -5,8 +5,10 @@ using UnityEngine;
 public class Selector : MonoBehaviour
 {
     public GameObject physGun;
+    public GameObject cineCamera;
 
     private bool oneSelected = false;
+    private bool twoSelected = false;
     // Update is called once per frame
     void Update()
     {
@@ -22,6 +24,25 @@ public class Selector : MonoBehaviour
             {
                 physGun.SetActive(false);
                 oneSelected = false;
+                Debug.Log("PhysGun deselected");
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (twoSelected == false)
+            {
+                physGun.SetActive(true);
+                twoSelected = true;
+                if (oneSelected == true)
+                {
+                    oneSelected = false;   
+                }
+                Debug.Log("PhysGun selected");
+            }
+            else
+            {
+                physGun.SetActive(false);
+                twoSelected = false;
                 Debug.Log("PhysGun deselected");
             }
         }
