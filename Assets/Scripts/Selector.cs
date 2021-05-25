@@ -31,19 +31,19 @@ public class Selector : MonoBehaviour
         {
             if (twoSelected == false)
             {
-                physGun.SetActive(true);
+                cineCamera.SetActive(true);
                 twoSelected = true;
                 if (oneSelected == true)
                 {
                     oneSelected = false;   
                 }
-                Debug.Log("PhysGun selected");
+                Debug.Log("CineCamera selected");
             }
             else
             {
-                physGun.SetActive(false);
+                cineCamera.SetActive(false);
                 twoSelected = false;
-                Debug.Log("PhysGun deselected");
+                Debug.Log("CineCamera deselected");
             }
         }
     }
